@@ -6,6 +6,9 @@ import gulpSass from 'gulp-sass';
 import plumber from 'gulp-plumber';
 import changed from 'gulp-changed';
 import imagemin, {mozjpeg, optipng} from 'gulp-imagemin';
+import uglify from 'gulp-uglify';
+import cleanCSS from 'gulp-clean-css';
+import htmlmin from 'gulp-htmlmin';
 
 const sass = gulpSass(dartSass);
 
@@ -16,14 +19,16 @@ const src = {
   pugwatch: 'src/pug/**/*.pug',
   sass: ['./src/sass/**/*.scss', '!./src/sass/**/_*.scss'],
   sasswatch: './src/sass/**/*.scss',
-  img:"./src/img/**/*"
+  img:'./src/img/**/*',
+  js: './src/js/**/*'
 };
  
 const dest = {
   root: './htdocs/',
   pug: './htdocs/',
   css: './htdocs/css/',
-  img: './htdocs/img/'
+  img: './htdocs/img/',
+  js: './htdocs/js/'
 };
 
 const img_task = () => (
@@ -44,6 +49,7 @@ const sass_task = () => {
     },
   }))
   .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
+  .pipe(cleanCSS())
   .pipe(gulp.dest(dest.css))
   .pipe(browserSync.reload({stream:true}));
 }
@@ -51,6 +57,7 @@ const sass_task = () => {
 const pug_task = () => {
   return gulp.src(src.pug)
     .pipe(plumber())
+    .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
     .pipe(pug({
       pretty: true,
       basedir: src.pugbase
@@ -58,8 +65,13 @@ const pug_task = () => {
     .pipe(gulp.dest(dest.pug))
     .pipe(browserSync.reload({stream:true}));
 }
- 
- 
+
+const js_task = () => {
+  return gulp.src(src.js)
+    .pipe(uglify())
+    .pipe(gulp.dest(dest.js));
+}
+
 const server_task = () => {
   browserSync({
     server: {
@@ -73,6 +85,7 @@ const watch_task = () => {
   gulp.watch(src.pugwatch, pug_task);
   gulp.watch(src.sass, sass_task);
   gulp.watch(src.img, img_task);
+   gulp.watch(src.js, js_task);
 }
  
 export default gulp.parallel(watch_task, server_task, img_task);
@@ -81,4 +94,5 @@ export {sass_task as sass};
 export {server_task as server};
 export {img_task as img};
 export {watch_task as watch};
+export {js_task as js};
 

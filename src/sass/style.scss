@@ -203,6 +203,58 @@
     font-size: 14px;
   }
 }
+
+// concept
+.concept__inner{
+  margin-top: 133px;
+  max-width: 1115px;
+  width: 100%;
+  margin: 133px auto 0;
+  position: relative;
+  padding: 0 25px 40px 25px;
+}
+
+.concept__inner::after{
+  content: "";
+  position: absolute;
+  background-color: $white2;
+  height: 720px;
+  width: 280px;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  @include mq("md"){
+    width: 180px;
+  }
+}
+
+.concept__img{
+  max-width: 1030px;
+  margin-top: 42px;
+}
+
+.concept__contents{
+  margin-top: 42px;
+}
+
+.concept__info-main{
+  font-size: 22px;
+  letter-spacing: 0.05em;
+  line-height: 1.727;
+  @include mq("md"){
+    font-size: 18px;
+  }
+}
+
+.concept__info-sub {
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  line-height: 1.867;
+  margin-top: 32px;
+  @include mq("md"){
+    font-size: 14px;
+  }
+}
 // 共通パーツ
 .section-title__main{
   font-size: 36px;

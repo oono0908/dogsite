@@ -49,7 +49,7 @@ const sass_task = () => {
     },
   }))
   .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
-  .pipe(cleanCSS())
+  // .pipe(cleanCSS())
   .pipe(gulp.dest(dest.css))
   .pipe(browserSync.reload({stream:true}));
 }
@@ -57,7 +57,7 @@ const sass_task = () => {
 const pug_task = () => {
   return gulp.src(src.pug)
     .pipe(plumber())
-    .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
+    // .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
     .pipe(pug({
       pretty: true,
       basedir: src.pugbase
@@ -68,7 +68,7 @@ const pug_task = () => {
 
 const js_task = () => {
   return gulp.src(src.js)
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest(dest.js));
 }
 

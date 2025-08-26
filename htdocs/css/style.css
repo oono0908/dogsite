@@ -82,6 +82,7 @@ a:hover {
   height: 16px;
   position: relative;
   margin-right: 15px;
+  z-index: 100;
 }
 
 .hamberger span {
@@ -109,6 +110,7 @@ a:hover {
 .hamberger.is-active span:first-child {
   top: 15px;
   transform: rotate(45deg);
+  background-color: #fff;
 }
 
 .hamberger.is-active span:nth-child(2) {
@@ -118,6 +120,7 @@ a:hover {
 .hamberger.is-active span:nth-child(3) {
   top: 15px;
   transform: rotate(-45deg);
+  background-color: #fff;
 }
 
 .drawer {
@@ -155,6 +158,73 @@ a:hover {
   background-color: #B19775;
   color: #fff;
   padding: 24px 26px;
+}
+
+.mv {
+  width: 100%;
+  height: 100vh;
+}
+
+.mv__inner {
+  width: 100%;
+  position: relative;
+  height: inherit;
+}
+
+.swiper {
+  height: inherit;
+}
+
+.swiper-wrapper {
+  height: inherit;
+}
+
+.swiper-slide {
+  height: inherit;
+}
+
+.swiper-slide picture, .swiper-slide img {
+  height: inherit;
+}
+
+.swiper-slide img {
+  object-fit: cover;
+}
+
+.mv__title-wrap {
+  position: absolute;
+  top: 50%;
+  left: 120px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+@media screen and (max-width: 768px) {
+  .mv__title-wrap {
+    left: 34px;
+  }
+}
+
+.mv__title-large {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1.474em;
+}
+@media screen and (max-width: 768px) {
+  .mv__title-large {
+    font-size: 28px;
+  }
+}
+
+.mv__title-small {
+  font-size: 15px;
+  color: #141414;
+  margin-top: 20px;
+}
+@media screen and (max-width: 768px) {
+  .mv__title-small {
+    font-size: 14px;
+  }
 }
 
 .section-title__main {

@@ -17,7 +17,9 @@
     <title>タイトル</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/script.js" defer></script>
   </head>
   <body>
@@ -43,5 +45,34 @@
         </div>
       </div>
     </header>
+    <main>
+      <div class="mv">
+        <div class="mv__inner">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <picture>
+                  <source srcset="/img/mv-pc01.jpg" media="(min-width: 1024px)" type="image/jpg"><img src="/img/mv-sp01.jpg" alt="犬の写真１">
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source srcset="/img/mv-pc02.jpg" media="(min-width: 1024px)" type="image/jpg"><img src="/img/mv-sp02.jpg" alt="犬の写真２">
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source srcset="/img/mv-pc03.jpg" media="(min-width: 1024px)" type="image/jpg"><img src="/img/mv-sp03.jpg" alt="犬の写真3">
+                </picture>
+              </div>
+            </div>
+          </div>
+          <div class="mv__title-wrap">
+            <p class="mv__title-large">ねえ、<br>ボクたちにも<br>こだわりがあるんだよ</p>
+            <p class="mv__title-small">大切な家族に安心安全なものを</p>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

@@ -4,3 +4,10 @@ $(function () {
      $(".js-drawer").fadeToggle()
     })
 });
+
+const mySwiper = new Swiper ('.swiper', {
+  loop: true,
+  autoplay: { 
+  delay: 3000,
+  },
+});

@@ -18,7 +18,33 @@ html(lang="ja")
     title タイトル
     link(rel='stylesheet', href="css/reset.css")
     link(rel='stylesheet', href="css/style.css")
+    link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css')
     script(src='https://code.jquery.com/jquery-3.3.1.js')
+    script(src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js')
     script(src="./js/script.js" defer)
   body
     include ./common/_header.pug
+    main
+      .mv
+        .mv__inner
+          .swiper
+            .swiper-wrapper
+              .swiper-slide
+                picture
+                  source(srcset='/img/mv-pc01.jpg', media='(min-width: 1024px)', type='image/jpg')
+                  img(src='/img/mv-sp01.jpg', alt="犬の写真１")
+              .swiper-slide
+                picture
+                  source(srcset='/img/mv-pc02.jpg', media='(min-width: 1024px)', type='image/jpg')
+                  img(src='/img/mv-sp02.jpg', alt="犬の写真２")
+              .swiper-slide
+                picture
+                  source(srcset='/img/mv-pc03.jpg', media='(min-width: 1024px)', type='image/jpg')
+                  img(src='/img/mv-sp03.jpg', alt="犬の写真3")
+          .mv__title-wrap
+            p.mv__title-large ねえ、
+              br 
+              | ボクたちにも
+              br 
+              | こだわりがあるんだよ
+            p.mv__title-small 大切な家族に安心安全なものを

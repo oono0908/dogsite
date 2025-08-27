@@ -261,7 +261,6 @@
 }
 
 // service
-
 .service{
   margin-top: 150px;
   width: 100%;
@@ -339,6 +338,68 @@
   margin-left: auto;
   display: block;
   text-align: center;
+}
+
+// access
+.access{
+  margin-top: 150px;
+}
+
+.access__inner{
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+  padding: 0 25px;
+  @include mq("md"){
+    padding: 0 15px;
+  }
+}
+
+.access__items{
+  margin-top: 46px;
+  width: 100%;
+}
+
+.access__item{
+  border-bottom: 1px solid $pink;
+  padding-bottom: 17px;
+}
+
+.access__item:not(:first-child){
+  margin-top: 17px;
+}
+
+.access__item dl{
+  display: flex;
+  @include mq("md"){
+    display: block;
+  }
+}
+
+.access__map{
+  width: 100%;
+  max-width: 1440px;
+  margin: 20px auto 0;
+}
+
+.access__map iframe{
+  width: 100%;
+}
+
+.item__title{
+  color: $black;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  width: 300px;
+  @include mq("md"){
+    width: 100%;
+  }
+}
+
+.item__text{
+  color: $black;
+  font-size: 15px;
+  letter-spacing: 0.05em;
 }
 
 // 共通パーツ

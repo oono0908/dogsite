@@ -160,6 +160,26 @@ a:hover {
   padding: 24px 26px;
 }
 
+.footer {
+  background-color: #382C22;
+}
+
+.footer__inner {
+  padding: 31px 0;
+  font-size: 14px;
+}
+@media screen and (max-width: 768px) {
+  .footer__inner {
+    padding: 21px 0;
+    font-size: 14px;
+  }
+}
+
+.footer__text {
+  text-align: center;
+  color: #fff;
+}
+
 .mv {
   width: 100%;
   height: 100vh;
@@ -514,26 +534,6 @@ a:hover {
     padding: 20px 0;
     width: 260px;
   }
-}
-
-.footer {
-  background-color: #382C22;
-}
-
-.footer__inner {
-  padding: 31px 0;
-  font-size: 14px;
-}
-@media screen and (max-width: 768px) {
-  .footer__inner {
-    padding: 21px 0;
-    font-size: 14px;
-  }
-}
-
-.footer__text {
-  text-align: center;
-  color: #fff;
 }
 
 .top-btn {

@@ -418,7 +418,8 @@
 .contact__inner{
   max-width: 1030px;
   margin: 0 auto;
-  padding: 80px 25px;
+  padding: 80px 25px 150px;
+  padding: 60px 15px 130px;
 }
 
 
@@ -443,6 +444,27 @@
   margin-top: 20px;
   border: 1px solid $white;
   letter-spacing: 0.05em;
+  position: relative;
+  &:after{
+    content: "";
+    width: 10px;
+    height: 1px;
+    transform: rotate(45deg);
+    bottom: 53%;
+    right: 30px;
+    background-color: $white;
+    position: absolute;
+  }
+  &:before{
+    content: "";
+    width: 10px;
+    height: 1px;
+    transform: rotate(-45deg);
+    top: 53%;
+    right: 30px;
+    background-color: $white;
+    position: absolute;
+  }
   &:hover{
     letter-spacing: 0.3em;
     transition:0.5s all;
@@ -450,6 +472,36 @@
   @include mq("md"){
     padding: 20px 0;
     width: 260px;
+  }
+}
+
+.footer{
+  background-color: $red2;
+}
+
+.footer__inner{
+  padding: 31px 0;
+  font-size: 14px;
+  @include mq("md"){
+    padding: 21px 0;
+    font-size: 14px;
+  }
+}
+
+.footer__text{
+  text-align: center;
+  color: $white;
+}
+
+.top-btn{
+  position: fixed;
+  bottom: 100px;
+  right: 50px;
+  z-index: 1000;
+  cursor: pointer;
+  @include mq("md"){
+    bottom: 50px;
+    right: 30px;
   }
 }
 

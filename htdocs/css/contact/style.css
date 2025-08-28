@@ -1,0 +1,51 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+}
+
+a[href^="tel:"] {
+  pointer-events: none;
+}
+@media screen and (max-width: 768px) {
+  a[href^="tel:"] {
+    pointer-events: auto;
+  }
+}
+
+a {
+  transition: opacity 0.3s;
+}
+a:hover {
+  opacity: 0.7;
+}
+
+.contact__title {
+  padding: 267px 0 195px 120px;
+  background-image: url("../../img/contact-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .contact__title {
+    background-image: url("../../img/contact-bg-sp.jpg");
+  }
+}
+
+.contact__text-content {
+  margin: 80px auto 0;
+  text-align: center;
+  display: block;
+}
+
+.contact__text {
+  letter-spacing: 0.05em;
+  font-size: 15px;
+  line-height: 1.75;
+  display: inline-block;
+  text-align: left;
+}

@@ -1,34 +1,21 @@
+extends ./common/_layout.pug
 
-doctype
-html(lang="ja")
-  head
-    meta(charset="utf-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
-    meta(name="description", content="")
-    meta(name="keywords", content="")
-    meta(name="author", content="")
-    meta(property="og:title", content="タイトル")
-    meta(property="og:type", content="website")
-    meta(property="og:url", content="http://任意のURL")
-    meta(property="og:image", content="http://任意のURL/og_image.png")
-    meta(property="og:site_name", content="")
-    meta(property="og:description", content="")
-    meta(property="fb:app_id", content="任意のID")
-    title タイトル
-    link(rel='stylesheet', href="css/reset.css")
-    link(rel='stylesheet', href="css/style.css")
-    link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css')
-    script(src='https://code.jquery.com/jquery-3.3.1.js')
-    script(src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js')
-    script(src="./js/script.js" defer)
-  body
-    include ./common/_header.pug
-    main
-      include ./parts/_topBtn.pug
-      include ./top/_mv.pug
-      include ./top/_concept.pug
-      include ./top/_service.pug
-      include ./top/_access.pug
-      include ./top/_contact.pug
-      include ./common/_footer.pug
+block append css
+  link(rel='stylesheet', href="../css/top/style.css")
+  link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css')
+block append js
+  script(src='https://code.jquery.com/jquery-3.3.1.js')
+  script(src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js')
+  script(src="./js/script.js" defer)
+
+block var
+  - var page = 'top'
+
+block main
+  main
+    include ./parts/_topBtn.pug
+    include ./top/_mv.pug
+    include ./top/_concept.pug
+    include ./top/_service.pug
+    include ./top/_access.pug
+    include ./top/_contact.pug

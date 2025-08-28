@@ -1,0 +1,19 @@
+extends ../common/_layout.pug
+
+block append css
+    link(rel='stylesheet', href="../css/contact/style.css")
+
+block var
+  - var page = 'contact'
+
+block main
+    main
+      .contact
+        .contact__inner
+          .contact__title.section-title
+            .section-title__main  Contact
+            .section-title__sub  お問い合わせ
+          .contact__text-content
+            span.contact__text 当店へのお問い合わせは下記フォームより受け付けております。
+            br
+            | 担当者が確認後、折り返しご連絡させていただきます。

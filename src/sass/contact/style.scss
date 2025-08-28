@@ -1,0 +1,27 @@
+@use "../base/base";
+@use "../global" as *;
+
+.contact__title{
+  padding: 267px 0 195px 120px;
+  background-image: url("../../img/contact-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  @include mq("md"){
+    background-image: url("../../img/contact-bg-sp.jpg");
+  }
+}
+
+.contact__text-content{
+  margin: 80px auto 0;
+	text-align: center;
+	display: block;
+}
+.contact__text{
+  letter-spacing: 0.05em;
+  font-size: 15px;
+  line-height: 1.75;
+  display: inline-block;
+  text-align: left;
+}

@@ -1,3 +1,5 @@
+block var
+
 doctype
 html(lang="ja")
   head
@@ -15,6 +17,13 @@ html(lang="ja")
     meta(property="og:description", content="")
     meta(property="fb:app_id", content="任意のID")
     title タイトル
-    link(rel='stylesheet', href="css/style.css")
+    block css
+      link(rel='stylesheet', href="../css/reset.css")
+      link(rel='stylesheet', href="../css/style.css")
+    block js
+
   body
-    div aaaa
+    include ./_header.pug
+    block main
+    include ./_footer.pug
+

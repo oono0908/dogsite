@@ -1,15 +1,7 @@
-// drawerの開閉
-$(function () {
-  $(".js-hamberger,.js-drawer,.js-drawer__link").click(function() {
-     $(".js-hamberger").toggleClass("is-active")
-     $(".js-drawer").fadeToggle()
-     return false;
-    })
-});
 // drawer__linkクリック時に選択された場所移動する
 $(function() {
-  $('.js-drawer__item a').on('click', function(e) {
-    e.preventDefault();
+  $('.js-drawer__item a, .js-header__link').on('click', function(e) {
+    // e.preventDefault();
     var targetId = $(this).attr('href');
     var target = $(targetId);
     if(target.length) {
@@ -51,4 +43,15 @@ $(function() {
        $('.js-top-btn').css('display','none');
     }
   });
+});
+
+$(function() {
+  if(window.location.hash) {
+    var target = $(window.location.hash);
+    if(target.length) {
+      var headerHeight = $('.js-header').outerHeight() || 0;
+      var scrollPosition = target.offset().top - headerHeight;
+      $('html, body').animate({ scrollTop: scrollPosition }, 600);
+    }
+  }
 });

@@ -45,13 +45,17 @@ $(function() {
   });
 });
 
-$(function() {
-  if(window.location.hash) {
-    var target = $(window.location.hash);
-    if(target.length) {
-      var headerHeight = $('.js-header').outerHeight() || 0;
-      var scrollPosition = target.offset().top - headerHeight;
-      $('html, body').animate({ scrollTop: scrollPosition }, 600);
+$(document).ready(function() {
+  $(window).on('scroll', function() {
+    var conceptTop = $('.js-concept').offset().top;
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= conceptTop) {
+      $('.js-header').css('background-color', "white");
+      $('.js-top-btn').css('display', 'block');
+    } else {
+      $('.js-header').css('background-color', 'transparent');
+      $('.js-top-btn').css('display', 'none');
     }
-  }
+  });
 });

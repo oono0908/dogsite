@@ -1,9 +1,27 @@
 // drawer__linkクリック時に選択された場所移動する
+// $(function() {
+//   $('.js-drawer__item a, .js-header__link').on('click', function(e) {
+//     // e.preventDefault();
+//     var targetId = $(this).attr('href');
+//     var target = $(targetId);
+//     if(target.length) {
+//       var headerHeight = $('.js-header').outerHeight();
+//       var scrollPosition = target.offset().top - headerHeight;
+//       $('html, body').animate({
+//         scrollTop: scrollPosition
+//       }, 600);
+//     }
+//   });
+// });
+
+
 $(function() {
   $('.js-drawer__item a, .js-header__link').on('click', function(e) {
     // e.preventDefault();
     var targetId = $(this).attr('href');
-    var target = $(targetId);
+    var id = targetId.replace("#", "");
+    var target = $("." + id);
+    console.log(target)
     if(target.length) {
       var headerHeight = $('.js-header').outerHeight();
       var scrollPosition = target.offset().top - headerHeight;
@@ -45,17 +63,16 @@ $(function() {
   });
 });
 
-$(document).ready(function() {
-  $(window).on('scroll', function() {
-    var conceptTop = $('.js-concept').offset().top;
-    var scroll = $(window).scrollTop();
-
-    if (scroll >= conceptTop) {
-      $('.js-header').css('background-color', "white");
-      $('.js-top-btn').css('display', 'block');
-    } else {
-      $('.js-header').css('background-color', 'transparent');
-      $('.js-top-btn').css('display', 'none');
+// contactページからアクセスされたときの挙動
+window.onload = function() {
+  var id = window.location.hash
+  var removedId = id.replace("#", "");
+  if (removedId) {
+    var target = $("." + removedId);
+    if (target.length) {
+      var headerHeight = $('.js-header').outerHeight() || 0;
+      var scrollPosition = target.offset().top - headerHeight;
+      $('html, body').animate({ scrollTop: scrollPosition }, 600);
     }
-  });
-});
+  }
+};

@@ -1,19 +1,3 @@
-// drawer__linkクリック時に選択された場所移動する
-// $(function() {
-//   $('.js-drawer__item a, .js-header__link').on('click', function(e) {
-//     // e.preventDefault();
-//     var targetId = $(this).attr('href');
-//     var target = $(targetId);
-//     if(target.length) {
-//       var headerHeight = $('.js-header').outerHeight();
-//       var scrollPosition = target.offset().top - headerHeight;
-//       $('html, body').animate({
-//         scrollTop: scrollPosition
-//       }, 600);
-//     }
-//   });
-// });
-
 
 $(function() {
   $('.js-drawer__item a, .js-header__link').on('click', function(e) {
